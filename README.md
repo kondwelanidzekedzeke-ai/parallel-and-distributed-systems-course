@@ -18,6 +18,18 @@ Open **http://127.0.0.1:8080/index.html**.
 
 Any static file server works. Opening `index.html` directly also works in most browsers, but serving it over HTTP is recommended.
 
+### Deploy to Render
+
+The repository root contains everything Render needs:
+
+- **Root directory:** `.` (default)
+- **Build command:** `npm install`
+- **Start command:** `npm start`
+
+`npm start` runs `server.js`, a zero-dependency static server that listens on `PORT` and serves the project root. Alternatively, Render can use the included `render.yaml` blueprint.
+
+You can also deploy it as a **Static Site** instead: leave the build command empty and set the publish directory to `.`.
+
 ---
 
 ## Features
@@ -123,6 +135,9 @@ Use **My Progress → Reset all progress** to clear local data.
 │   ├── lab.js          # Simulator rendering and interactions
 │   ├── exam.js         # Question bank, filtering, marking, exam state
 │   └── app.js          # Hash router, page renderers, exam UI, theme, progress UI
+├── server.js           # Zero-dependency static server for Render
+├── package.json        # "npm start" root command
+├── render.yaml         # Render web service blueprint
 └── README.md
 ```
 

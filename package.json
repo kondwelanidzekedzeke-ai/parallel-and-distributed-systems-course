@@ -1,0 +1,9 @@
+{
+  "name": "parallel-and-distributed-systems-course",
+  "version": "1.0.0",
+  "private": true,
+  "description": "University-level Parallel and Distributed Systems learning platform",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

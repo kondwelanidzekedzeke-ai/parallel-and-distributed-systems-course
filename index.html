@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Interactive university learning platform for Parallel and Distributed Systems — detailed notes, simulators, and examination preparation.">
+  <title>Parallel & Distributed Systems — University Learning Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=20261130">
+  <script>
+    try { document.documentElement.setAttribute("data-theme", localStorage.getItem("pds_theme") || "light"); } catch (e) {}
+  </script>
+</head>
+<body>
+  <div class="app">
+
+    <!-- Mobile header -->
+    <div class="mobile-top">
+      <div class="flex items-center gap-1">
+        <button class="mobile-menu-btn" id="menu-btn" aria-label="Open navigation">☰</button>
+        <div class="mobile-brand"><span class="mark">PDS</span> Parallel &amp; Distributed</div>
+      </div>
+      <div class="mobile-actions">
+        <button class="icon-btn theme-toggle" onclick="App.toggleTheme()" aria-label="Toggle dark mode" title="Toggle dark mode">◐</button>
+        <a class="icon-btn" href="#/search" aria-label="Search">⌕</a>
+        <a class="icon-btn" href="#/progress" aria-label="Progress">◔</a>
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-brand">
+        <div class="mark">PDS</div>
+        <div>
+          <div class="brand-text">Parallel &amp; Distributed</div>
+          <div class="brand-sub">University Learning Platform</div>
+        </div>
+      </div>
+
+      <nav aria-label="Main navigation">
+        <div class="nav-section">
+          <div class="nav-title">Overview</div>
+          <div class="nav-item">
+            <a class="nav-link" data-page="dashboard" href="#/dashboard">
+              <span class="nav-icon">▦</span> Dashboard
+            </a>
+          </div>
+        </div>
+
+        <div class="nav-section">
+          <div class="nav-title">Learn</div>
+          <div class="nav-item">
+            <a class="nav-link" data-page="course" href="#/course">
+              <span class="nav-icon">▤</span> Course Content
+              <span class="nav-badge">8</span>
+            </a>
+          </div>
+          <div class="nav-item">
+            <a class="nav-link" data-page="lab" href="#/lab">
+              <span class="nav-icon">⚙</span> Interactive Learning Lab
+            </a>
+          </div>
+          <div class="nav-item">
+            <a class="nav-link" data-page="examples" href="#/examples">
+              <span class="nav-icon">◈</span> Practical Examples
+            </a>
+          </div>
+          <div class="nav-item">
+            <a class="nav-link" data-page="videos" href="#/videos">
+              <span class="nav-icon">▶</span> Video Resources
+            </a>
+          </div>
+        </div>
+
+        <div class="nav-section">
+          <div class="nav-title">Prepare</div>
+          <div class="nav-item">
+            <a class="nav-link" data-page="revision" href="#/revision">
+              <span class="nav-icon">◫</span> Revision Centre
+            </a>
+          </div>
+          <div class="nav-item">
+            <a class="nav-link" data-page="exam" href="#/exam">
+              <span class="nav-icon">✎</span> Examination Centre
+            </a>
+          </div>
+          <div class="nav-item">
+            <a class="nav-link" data-page="progress" href="#/progress">
+              <span class="nav-icon">◔</span> My Progress
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="progress-card">
+          <div class="progress-ring" id="side-progress">0%</div>
+          <div class="progress-info">
+            <p>Course progress</p>
+            <strong>Keep going — you've got this.</strong>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Desktop header -->
+    <header class="top-header">
+      <div class="header-left">
+        <div class="site-brand">
+          <div class="mark">PDS</div>
+          <div>
+            <div class="brand-text">Parallel &amp; Distributed Systems</div>
+            <div class="brand-sub">Interactive University Learning Platform</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="header-center">
+        <div class="search-wrap">
+          <span class="search-icon">⌕</span>
+          <input type="search" id="global-search" placeholder="Search lessons, definitions, topics… (press Enter)" aria-label="Search course">
+        </div>
+      </div>
+
+      <div class="header-right">
+        <button class="icon-btn theme-toggle" onclick="App.toggleTheme()" aria-label="Toggle dark mode" title="Toggle dark mode">◐</button>
+        <a class="icon-btn" href="#/progress" title="My progress">◔</a>
+        <div class="user-avatar" title="Student">S</div>
+      </div>
+    </header>
+
+    <!-- Main content -->
+    <main class="main-content">
+      <div class="page-body" id="page-body">
+        <div class="empty-state">
+          <h2>Loading learning platform…</h2>
+          <p>Preparing modules, simulators, and examination content.</p>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <div class="overlay" id="overlay"></div>
+  <div id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/progress.js?v=20261128"></script>
+  <script src="js/ui.js?v=20261128"></script>
+  <script src="js/content.js?v=20261128"></script>
+  <script src="js/lab.js?v=20261128"></script>
+  <script src="js/exam.js?v=20261128"></script>
+  <script src="js/app.js?v=20261128"></script>
+</body>
+</html>
